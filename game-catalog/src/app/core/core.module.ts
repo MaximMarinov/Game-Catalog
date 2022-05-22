@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { SearchBarComponent } from './header/search-bar/search-bar.component';
-
-
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    SearchBarComponent
+    HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent

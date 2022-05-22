@@ -9,6 +9,7 @@ import { GaugeModule } from 'angular-gauge';
 import {HttpClientModule} from '@angular/common/http';
 import {MaterialModule} from './material.module';
 import {CoreModule} from './core/core.module'
+import {FeatureModule} from './feature/feature.module'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CoreModule} from './core/core.module'
     FormsModule,
     HttpClientModule,
     GaugeModule.forRoot(),
-    CoreModule
+    CoreModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
