@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsComponent } from './feature/game/details/details.component';
 import { HomeComponent } from './feature/pages/home/home.component';
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'search/:game-search',
     component: HomeComponent
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent
   }
 ];
 

@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule } from '@angular/forms';
-
+import { DetailsComponent } from './game/details/details.component';
+import { GaugeModule } from 'angular-gauge';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    GaugeModule,
+    AppRoutingModule
   ],
   exports: [
     HomeComponent
