@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/core/services/http.service';
 import { APIResponse, Game } from 'src/app/core/services/models';
 
@@ -8,15 +9,16 @@ import { APIResponse, Game } from 'src/app/core/services/models';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  public sort!: string | undefined;
-
+export class HomeComponent implements OnInit, OnDestroy {
+  public sort!: string;
   public games!: Array<Game>;
+  private routeSub!: Subscription;
+  private gameSub!: Subscription;
 
-  constructor(private http: HttpService, private activatedRoute: ActivatedRoute) { }
+  constructor(private http: HttpService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params) => {
+    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if (params['game-search']) {
         this.searchGames('metacrit', params['game-search']);
       } else {
@@ -26,10 +28,24 @@ export class HomeComponent implements OnInit {
   }
 
   searchGames(sort: string, search?: string): void {
-    this.http.getGameList(sort, search).subscribe((gameList: APIResponse<Game>) => {
+      this.gameSub = this.http.getGameList(sort, search).subscribe((gameList: APIResponse<Game>) => {
       this.games = gameList.results;
       console.log(gameList);
     });
+  }
+
+  openGameDetails(id: string) {
+    this.router.navigate(['details', id]);
+  }
+
+  ngOnDestroy(): void {
+    if (this.gameSub) {
+      this.gameSub.unsubscribe();
+    }
+
+    if (this.routeSub) {
+      this.routeSub.unsubscribe();
+    }
   }
 
 }
