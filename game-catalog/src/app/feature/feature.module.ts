@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './game/details/details.component';
 import { GaugeModule } from 'angular-gauge';
 import { AppRoutingModule } from '../app-routing.module';
+import { TabsComponent } from './game/tabs/tabs.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,

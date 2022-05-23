@@ -21,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
   exports: [
     MatButtonModule,
@@ -67,7 +69,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
     
   ],
   providers: [MatDatepickerModule],
