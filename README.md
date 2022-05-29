@@ -5,5 +5,5 @@ Angular Web App using Rapid API's RAWG Video Games Database.
 https://game-catalog-maksim-marinov.netlify.app/
 
 # How to run
-Run <ng serve> command in the game-catalog directory.
+Run "ng serve" command in the game-catalog directory.
 
