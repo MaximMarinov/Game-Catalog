@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { HttpService } from 'src/app/core/services/http.service';
 import { APIResponse, Game } from 'src/app/core/services/models';
 

@@ -1,6 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
+import { map } from 'rxjs/internal/operators/map';
 import { environment } from 'src/environments/environment';
 import { APIResponse, Game } from './models';
 
